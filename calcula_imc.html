@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+<head class="cabecalho">
+    <title> Calcula IMC </title>
+    <link rel="stylesheet" href="imc.css">
+</head>
+<header class="titulo">
+    <h1> Calculando imc usando javascript </h1>
+</header>
+<body class="corpo">
+    <p> Site que calcula seu imc.</p>    
+</body>
+<footer class="footer">
+    <p> Calcula IMC 2022 </p>
+</footer>
+
+<script> 
+    // algoritimo para calcular o imc
+    function IMC(altura, peso){
+        const result = peso / (altura*altura);
+        console.log(result);
+        return result.toFixed(2);
+    }
+    // Cria o botão para resetar a página
+    function createbutton(){;
+    let btn = document.createElement("BUTTON");
+    let lbl = document.createTextNode("Clique aqui para resetar a página");
+    btn.appendChild(lbl);
+    btn.onclick = function(){
+        window.history.go(0);
+    }
+    // Ativa o botão
+    document.body.appendChild(btn);
+}
+createbutton();    
+
+    // Pegar informação do usário.
+    function BOTAO(){
+        let btn0 = document.createElement('BUTTON');
+        let lbl0 = document.createTextNode("Clique aqui para calcular seu imc!");
+        btn0.appendChild(lbl0);
+        
+        btn0.onclick = function() {
+            const nome  = window.prompt("Qual seu nome? "); 
+            const idade = window.prompt(nome + " Qual sua idade? ");
+            const altura = window.prompt(nome + " Qual sua altura? ");
+            const peso = window.prompt(nome + " Qual seu peso");
+            const imc = IMC(altura, peso);
+            const imc_alterado = Math.round(imc);
+            document.write('<br>')
+            if (imc_alterado <= 22){
+                document.write("Segundo sua idade "+ idade + " Correlacionando sua idade ao seu peso e sua altura o seu imc " + imc_alterado + " está bom!");
+            }
+            else{
+                document.write("Segundo sua idade " + idade + " Correlacionando sua idade ao seu peso e sua altura o seu imc " + imc + " nao está bom!");
+            }
+        }
+        document.body.appendChild(btn0);
+    }
+
+BOTAO();
+
+</script>

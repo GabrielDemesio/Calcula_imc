@@ -1,0 +1,16 @@
+.titulo {
+    text-align: center;
+}
+.corpo {
+    background-color: green;
+    color: black;
+    text-align: center;
+}
+.footer {
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0px;
+    text-align: justify;
+}
